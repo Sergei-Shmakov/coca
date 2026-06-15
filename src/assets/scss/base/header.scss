@@ -1,6 +1,7 @@
 @use '../mixins';
 .header {
     padding: 26px 0 22px;
+    background-color: transparent;
     @include mixins.mobile {
         padding: 22px 0 18px;
     }
@@ -59,6 +60,7 @@
         background-color: var(--neutral-color-130);
         transform: translateY(8px);
         transition: background-color var(--transition-300);
+        cursor: pointer;
 
         &::before {
             position: absolute;
@@ -84,6 +86,10 @@
             text-align: center;
             color: var(--neutral-color-140);
             transform: translateX(-50%);
+            @include mixins.small-tablet {
+                top: -28px;
+                font-size: 20px;
+            }
         }
 
         &-checkbox {
@@ -136,7 +142,8 @@
         }
 
         @include mixins.small-tablet {
-            line-height: 300%;
+            line-height: 200%;
+            font-size: 20px;
         }
     }
 }

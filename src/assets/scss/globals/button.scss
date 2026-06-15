@@ -1,0 +1,21 @@
+@use '../mixins';
+
+.button {
+    &-form {
+        border-radius: 100px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 150%;
+        text-align: center;
+        transition: opacity var(--transition-200);
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+    @include mixins.small-tablet {
+        padding: 12px 32px;
+    }
+    @include mixins.mobile {
+        font-size: 14px;
+    }
+}

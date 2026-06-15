@@ -1,0 +1,260 @@
+@use '../../mixins';
+
+.hero {
+    position: relative;
+    padding: 87px 0 141px;
+
+    @include mixins.mini-desktop {
+        padding: 77px 0 121px;
+    }
+    @include mixins.mobile {
+        min-height: calc(100dvh - 128px);
+    }
+    &::before {
+        top: 50px;
+        left: 180px;
+        width: 551px;
+        height: 551px;
+        background-color: #fa7515;
+        filter: blur(220px);
+        opacity: 0.2;
+        @include mixins.mini-desktop {
+            left: 80px;
+            width: 351px;
+            height: 351px;
+        }
+        @include mixins.small-tablet {
+            top: 20px;
+            left: 40px;
+            width: 251px;
+            height: 251px;
+        }
+    }
+    &::after {
+        bottom: 0;
+        right: 0;
+        width: 525px;
+        height: 525px;
+        background-color: var(--success-color-70);
+        filter: blur(180px);
+        @include mixins.mini-desktop {
+            width: 325px;
+            height: 325px;
+        }
+        @include mixins.small-tablet {
+            width: 225px;
+            height: 225px;
+        }
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        border-radius: 50%;
+        border-radius: 100%;
+        z-index: var(--z-index--1);
+    }
+
+    &__container {
+        @include mixins.flex-justify-between;
+        align-items: flex-end;
+        @include mixins.mini-desktop {
+            gap: 50px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    &__left {
+        max-width: 599px;
+    }
+    &__title {
+        margin-bottom: 114px;
+        font-weight: 700;
+        font-size: 80px;
+        line-height: 120%;
+        letter-spacing: -0.04em;
+        color: var(--neutral-color-100);
+        @include mixins.mini-desktop {
+            margin-bottom: 74px;
+        }
+        @include mixins.tablet {
+            font-size: 60px;
+            margin-bottom: 44px;
+        }
+        @include mixins.mobile {
+            font-size: 48px;
+            margin-bottom: 38px;
+        }
+        @include mixins.small-mobile {
+            font-size: 38px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__btn {
+        padding: 16px 44px;
+        color: var(--neutral-color-10);
+        background-color: var(--neutral-color-100);
+    }
+
+    &__right {
+        position: relative;
+        margin-right: 20px;
+        @include mixins.mini-desktop {
+            display: none;
+        }
+    }
+    &__sales {
+        padding: 20px;
+        margin-bottom: 29px;
+        @include mixins.small-desktop {
+            max-width: 320px;
+        }
+        &-title {
+            margin-bottom: 16px;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 150%;
+            letter-spacing: -0.03em;
+            color: #1d1e25;
+        }
+        &-img {
+            @include mixins.small-desktop {
+                max-width: 280px;
+            }
+        }
+    }
+    &__customer {
+        position: absolute;
+        top: -60px;
+        right: -140px;
+        display: inline-block;
+        padding: 15px 18px;
+        &-title {
+            margin-bottom: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 188%;
+            letter-spacing: -0.03em;
+            color: #1d1e25;
+        }
+
+        @include mixins.small-desktop {
+            top: -140px;
+            right: -30px;
+        }
+        @include mixins.mini-desktop {
+            top: 0;
+            right: -100px;
+        }
+    }
+
+    &__sales,
+    &__customer {
+        box-shadow: 20px 40px 80px 0 #5960871f;
+        background: #fff;
+        border-radius: 8px;
+    }
+
+    &__stats {
+        border-radius: 8px;
+        padding: 20px 29px;
+        width: 419px;
+        height: 119px;
+        box-shadow: 20px 40px 80px 0 #2d33511f;
+        background: #000;
+        text-align: left;
+        &-head {
+            &-th {
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 143%;
+                color: #5c616f;
+            }
+        }
+        &-body {
+            &-th {
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 130%;
+                color: #fff;
+
+                &:nth-child {
+                    padding-right: 80px;
+                }
+            }
+            &-num {
+                display: inline-block;
+                margin-right: 3px;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 143%;
+                &--red {
+                    color: #e35454;
+                    &::before {
+                        background: url('../../../icons/down-red.svg');
+                    }
+                }
+                &--green {
+                    color: #60d39c;
+                    &::before {
+                        background: url('../../../icons/up-green.svg');
+                    }
+                }
+                &--green::before,
+                &--red::before {
+                    content: '';
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+            &-text {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 157%;
+                letter-spacing: -0.04em;
+                color: #5c616e;
+            }
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 69px;
+    }
+
+    &__form {
+        @include mixins.flex-align-center;
+        gap: 16px;
+        @include mixins.mini-desktop {
+            justify-content: center;
+        }
+        @include mixins.small-mobile {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    &__input {
+        min-width: 280px;
+        padding-bottom: 23px;
+        border-bottom: 1px solid var(--neutral-color-40);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--neutral-color-100);
+        background-color: var(--neutral-color-10);
+        background: transparent;
+        @include mixins.small-tablet {
+            padding-bottom: 13px;
+        }
+        @include mixins.mobile {
+            min-width: 100px;
+            max-width: 180px;
+        }
+    }
+}

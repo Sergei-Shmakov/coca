@@ -1,5 +1,7 @@
+@use '../mixins';
 :root {
     --neutral-color-10: #fff;
+    --neutral-color-40: #ced1d8;
     --neutral-color-100: #1d1e25;
     --neutral-color-20: #f5f5f5;
     --neutral-color-60: #18181d;
@@ -7,16 +9,22 @@
     --neutral-color-120: #828282;
     --neutral-color-140: #000;
     --primary-color-50: #4e7ddb;
+    --success-color-70: #e2f8f0b3;
     --logo-color-text: #101010;
     --logo-color-circle: #101010;
     --container-wigth: 1200px;
     --container-padding: 15px;
     --transition-200: 200ms ease-in-out;
     --transition-300: 300ms ease-in-out;
+    --z-index--2: -2;
+    --z-index--1: -1;
     --z-index-1: 1;
     --z-index-2: 2;
     --z-index-3: 3;
     --z-index-4: 4;
+    @include mixins.mobile {
+        --container-wigth: 480px;
+    }
 }
 
 [data-theme='dark'] {
@@ -25,4 +33,5 @@
     --neutral-color-100: #fff;
     --logo-color-text: #fff;
     --logo-color-circle: #343542;
+    --success-color-70: #e2f8f033;
 }

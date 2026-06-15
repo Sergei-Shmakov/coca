@@ -10,6 +10,9 @@ body {
     overflow-x: hidden;
     color: var(--neutral-color-100);
     background-color: var(--neutral-color-10);
+    &--fixed {
+        overflow-y: hidden;
+    }
 }
 img {
     height: auto;

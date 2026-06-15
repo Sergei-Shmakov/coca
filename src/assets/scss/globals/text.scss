@@ -113,7 +113,7 @@
                 background-color: var(--neutral-color-100);
                 transform: translateY(-43px);
 
-                @include mixins.small-desktop {
+                @include mixins.mini-desktop {
                     display: none;
                 }
             }
