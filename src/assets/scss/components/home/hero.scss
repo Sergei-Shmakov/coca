@@ -8,7 +8,7 @@
         padding: 77px 0 121px;
     }
     @include mixins.mobile {
-        min-height: calc(100dvh - 128px);
+        min-height: calc(100dvh - 109px);
     }
     &::before {
         top: 50px;
@@ -177,7 +177,8 @@
             }
         }
         &-body {
-            &-th {
+            &-td {
+                white-space: nowrap;
                 font-weight: 700;
                 font-size: 20px;
                 line-height: 130%;

@@ -1,0 +1,77 @@
+@use '../../mixins';
+
+.overview {
+    background-color: var(--overview-bg-color);
+    padding: 100px 0;
+    @include mixins.tablet {
+        text-align: center;
+    }
+    @include mixins.mobile {
+        padding: 60px 0;
+    }
+    &__item {
+        max-width: 453px;
+        &-img {
+            margin-bottom: 24px;
+            @include mixins.tablet {
+                margin-bottom: 18px;
+            }
+        }
+
+        &-title {
+            max-width: 262px;
+            margin-bottom: 24px;
+            font-weight: 600;
+            line-height: 131%;
+            letter-spacing: -0.03em;
+            color: #fff;
+            @include mixins.tablet {
+                margin-bottom: 18px;
+            }
+            @include mixins.mobile {
+                max-width: 320px;
+            }
+        }
+        &-descr {
+            max-width: 500px;
+            font-weight: 500;
+            line-height: 150%;
+            color: #7e8492;
+        }
+    }
+    &__title {
+        margin-bottom: 24px;
+        max-width: 816px;
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        color: #fff;
+    }
+    &__descr {
+        margin-bottom: 80px;
+        max-width: 660px;
+        font-weight: 500;
+        line-height: 150%;
+        color: #7e8492;
+        @include mixins.tablet {
+            margin-bottom: 60px;
+        }
+    }
+    &__list {
+        @include mixins.flex-all-between;
+        flex-wrap: wrap;
+        gap: 56px;
+        @include mixins.tablet {
+            gap: 40px;
+            flex-direction: column;
+            aign-items: center;
+        }
+    }
+    &__title,
+    &__descr,
+    &__item-title {
+        @include mixins.tablet {
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+}

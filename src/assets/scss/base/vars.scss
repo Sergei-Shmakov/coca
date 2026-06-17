@@ -12,6 +12,7 @@
     --success-color-70: #e2f8f0b3;
     --logo-color-text: #101010;
     --logo-color-circle: #101010;
+    --overview-bg-color: #1d1e25;
     --container-wigth: 1200px;
     --container-padding: 15px;
     --transition-200: 200ms ease-in-out;
@@ -25,6 +26,12 @@
     @include mixins.mobile {
         --container-wigth: 480px;
     }
+    @include mixins.mini-desktop {
+        --container-wigth: 1000px;
+    }
+    @include mixins.tablet {
+        --container-wigth: 860px;
+    }
 }
 
 [data-theme='dark'] {
@@ -34,4 +41,5 @@
     --logo-color-text: #fff;
     --logo-color-circle: #343542;
     --success-color-70: #e2f8f033;
+    --overview-bg-color: #18181d;
 }
